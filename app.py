@@ -7,10 +7,10 @@ load_dotenv()
 # Establish connection to Azure MySQL database
 def connect_to_db():
     return mysql.connector.connect(
-        host='myfirst-mysql-server.mysql.database.azure.com',
+        host=os.getenv('server'),
         user='sqldbadmin',
-        password=os.getenv("DB_PASSWORD"),
-        database=os.getenv("DB_NAME"),
+        password=os.getenv("PASSWORD"),
+        database=os.getenv("DATABASE"),
         port=3306
     )
 
@@ -36,4 +36,3 @@ if data:
         st.write(f"{row['name']} has a :{row['pet']}:")
 else:
     st.write("No data found.")
-

@@ -7,7 +7,7 @@ load_dotenv()
 # Establish connection to Azure MySQL database
 def connect_to_db():
     return mysql.connector.connect(
-        host=os.getenv('server'),
+        host=os.getenv('SERVER'),
         user='sqldbadmin',
         password=os.getenv("PASSWORD"),
         database=os.getenv("DATABASE"),

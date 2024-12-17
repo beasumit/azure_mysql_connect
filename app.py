@@ -9,7 +9,8 @@ cnx = mysql.connector.connect(user="mysqladmin",
                               password=os.getenv("PASSWORD"), 
                               host="myfirst-mysql-webapp.mysql.database.azure.com", 
                               port=3306, 
-                              database="demo1")
+                              database="demo1", 
+                              ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem")
 # Query data
 def get_data_from_db(query):
     db_connection = cnx

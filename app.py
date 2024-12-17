@@ -10,7 +10,8 @@ cnx = mysql.connector.connect(user=os.getenv("USERNAME"),
                                   host=os.getenv("SERVER"), 
                                   port=3306, 
                                   database=os.getenv("DATABASE"), 
-                                  ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem")
+                                  ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem", 
+                                  ssl_disabled=True)
 # Query data
 def get_data_from_db(query):
     db_connection = cnx

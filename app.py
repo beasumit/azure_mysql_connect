@@ -7,7 +7,7 @@ load_dotenv()
 # Establish connection to Azure MySQL database
 cnx = mysql.connector.connect(user=os.getenv("USERNAME"), 
                                   password=os.getenv("PASSWORD"), 
-                                  host=os.getenv("SERVER"), 
+                                  host="myfirst-mysql-webapp.mysql.database.azure.com", 
                                   port=3306, 
                                   database=os.getenv("DATABASE"), 
                                   ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem")

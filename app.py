@@ -11,7 +11,7 @@ cnx = mysql.connector.connect(user="mysqladmin",
                               port=3306, 
                               database="demo1", 
                               ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem",
-                              ssl_disabled=False)
+                              ssl_disabled=True)
 # Query data
 def get_data_from_db(query):
     db_connection = cnx

@@ -5,18 +5,16 @@ import os
 
 load_dotenv()
 # Establish connection to Azure MySQL database
-def connect_to_db():
-    return mysql.connector.connect(
-        host=os.getenv('SERVER'),
-        user='sqldbadmin',
-        password=os.getenv("PASSWORD"),
-        database=os.getenv("DATABASE"),
-        port=3306
-    )
-
+cnx = mysql.connector.connect(user=os.getenv("USERNAME"), 
+                                  password=os.getenv("PASSWORD"), 
+                                  host=os.getenv("SERVER"), 
+                                  port=3306, 
+                                  database=os.getenv("DATABASE"), 
+                                  ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem", 
+                                  ssl_disabled=False)
 # Query data
 def get_data_from_db(query):
-    db_connection = connect_to_db()
+    db_connection = cnx
     cursor = db_connection.cursor(dictionary=True)
     cursor.execute(query)
     result = cursor.fetchall()

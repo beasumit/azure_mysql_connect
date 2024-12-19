@@ -1,11 +1,11 @@
 import streamlit as st
-import mysql.connector
+from mysql.connector import connection
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 # Establish connection to Azure MySQL database
-cnx = mysql.connector.connect(user="mysqladmin", 
+cnx = connection.MySQLConnection(user="mysqladmin", 
                               password=os.getenv("PASSWORD"), 
                               host="myfirst-mysql-webapp.mysql.database.azure.com", 
                               port=3306, 

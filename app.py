@@ -10,7 +10,7 @@ cnx = connection.MySQLConnection(user="mysqladmin",
                               host="myfirst-mysql-webapp.mysql.database.azure.com", 
                               port=3306, 
                               database="demo1", 
-                              ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem")
+                              ssl_ca="azure_certificate/DigiCertGlobalRootG2.crt.pem")
 
 # Query data
 def get_data_from_db(query):

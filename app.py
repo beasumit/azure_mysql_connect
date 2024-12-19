@@ -2,6 +2,7 @@ import streamlit as st
 import mysql.connector
 from dotenv import load_dotenv
 import os
+import sqlalchemy
 
 load_dotenv()
 # Establish connection to Azure MySQL database
@@ -10,7 +11,11 @@ cnx = mysql.connector.connect(user="mysqladmin",
                               host="myfirst-mysql-webapp.mysql.database.azure.com", 
                               port=3306, 
                               database="demo1", 
-                              ssl_ca="azure_certificate/DigiCertGlobalRootCA.crt.pem")
+                              ssl_ca="azure_certificate/DigiCertGlobalRootG2.crt.pem")
+#new way t connecting to database
+
+
+
 # Query data
 def get_data_from_db(query):
     db_connection = cnx

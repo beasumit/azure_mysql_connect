@@ -2,7 +2,6 @@ import streamlit as st
 import mysql.connector
 from dotenv import load_dotenv
 import os
-import sqlalchemy
 
 load_dotenv()
 # Establish connection to Azure MySQL database
